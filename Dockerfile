@@ -9,7 +9,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 COPY yarn.lock ./
 
-RUN yarn install --production=true
+# strict-ssl off is only required because I'm running behind corporate firewall that injects custom CA
+RUN yarn config set "strict-ssl" false && yarn install --production=true
 
 # Bundle app source
 COPY . .
