@@ -9,20 +9,34 @@ Testing with:
 npm install -g yarn
 ```
 
-## To build
+## Dev/Debug time
+### To build
 
 ```
 yarn
 ```
 
-## To run
+### To run
 
 ```
 npm start
 ```
 
-## Debug mode
+### Debug mode
 
 ```
 DEBUG=covid-stats-parser:* npm start
+```
+
+## Docker
+### Create Docker image
+
+```
+docker build . -t covid-stats-parser
+```
+
+### Run docker
+
+```
+docker run -p 3000:3000 -d covid-stats-parser
 ```
